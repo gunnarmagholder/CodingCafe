@@ -1,0 +1,27 @@
+{
+  "name": "codingcafe",
+  "version": "0.0.1",
+  "description": "Finding devs on public places for pair-programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunnarmagholder/CodingCafe.git"
+  },
+  "keywords": [
+    "coding",
+    "community"
+  ],
+  "author": "G. Magholder",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gunnarmagholder/CodingCafe/issues"
+  },
+  "homepage": "https://github.com/gunnarmagholder/CodingCafe#readme",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
