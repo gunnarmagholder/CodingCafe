@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Map from '../components/bingmap';
+import Map from '../components/leaflet';
 
 class App extends Component {
   render() {

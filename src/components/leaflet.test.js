@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Map from './bingmap';
+import { shallow } from 'enzyme';
+import Map from './leaflet';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Map />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  let mountedLeaflet = shallow(<Map />);
 });

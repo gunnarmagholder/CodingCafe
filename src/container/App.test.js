@@ -1,9 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+describe("App", () => {
+  let mountedApp;
+  beforeEach(() => {
+    mountedApp = shallow(<App />);
+  });
+  it('renders without crashing', () => {
+    expect(mountedApp).toBeDefined(); 
+  });
+  
+  it('renders a Map inside the app', () => {
+    const Maps = mountedApp.find('Map');
+    expect(Maps.length).toBe(1);
+  });  
 });
+
+
