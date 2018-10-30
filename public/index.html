@@ -21,23 +21,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <script type='text/javascript'>
-      function GetMap() {
-          console.log("Loading map into #mymap...");
-          var map = new Microsoft.Maps.Map('#myMap', {});
-          //Request the user's location
-          navigator.geolocation.getCurrentPosition(function (position) {
-              var loc = new Microsoft.Maps.Location(
-                  position.coords.latitude,
-                  position.coords.longitude);
-              //Add a pushpin at the user's location.
-              var pin = new Microsoft.Maps.Pushpin(loc);
-              map.entities.push(pin);
-              //Center the map on the user's location.
-              map.setView({ center: loc, zoom: 15 });
-          });
+      var map;
+      function GetMap()
+      {
+          map = new Microsoft.Maps.Map('#myMap', {});
       }
       </script>
-      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqB1sYdWKuQ-n2Jbk0Cgr9A7_DvWLeLIWvhfgOxzzG8VgHCpLeSfDMI6QBoRF5I8' async defer></script>
+     
     <title>React App</title>
   </head>
   <body>
