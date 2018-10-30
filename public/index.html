@@ -11,6 +11,7 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,7 +25,32 @@
       var map;
       function GetMap()
       {
+          console.log("Map loaded - calling getMap()");
           map = new Microsoft.Maps.Map('#myMap', {});
+          var location = new Microsoft.Maps.Location(53.542392,9.9914748);
+          var pushpin = new Microsoft.Maps.Pushpin(location,{
+            title: 'some Location',
+            subTitle: 'just clicked',
+            text: '1'
+          });
+          map.entities.push(pushpin);
+          navigator.geolocation.getCurrentPosition(function (position) {
+            var loc = new Microsoft.Maps.Location(
+                position.coords.latitude,
+                position.coords.longitude);
+
+            //Add a pushpin at the user's location.
+            var pin = new Microsoft.Maps.Pushpin(loc,{
+              title: 'myLocation',
+              subTitle: 'as the browser told me',
+              text: '2'
+            });
+            map.entities.push(pin);
+
+            //Center the map on the user's location.
+            map.setView({ center: loc, zoom: 15 });
+        });
+          
       }
       </script>
      
