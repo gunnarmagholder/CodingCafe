@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Map from '../components/leaflet';
-import BingMap from '../components/bingmaps';
 
 class App extends Component {
   render() {
@@ -10,7 +9,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Map />
-          <BingMap />
         </header>
       </div>
     );
